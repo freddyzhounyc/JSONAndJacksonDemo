@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Log
 public class BookController {
 
-    @GetMapping(path = "/book")
+    @GetMapping(path = "/books")
     public Book retreiveBook() {
         return Book.builder()
                 .isbn("978-0-13-478627-5")
@@ -21,7 +21,7 @@ public class BookController {
                 .build();
     }
 
-    @PostMapping(path = "/book")
+    @PostMapping(path = "/books")
     public Book createBook(@RequestBody final Book book) {
         log.info("Got book: " + book.toString());
         return book;
